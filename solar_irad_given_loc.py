@@ -24,7 +24,7 @@ def time_variables(starting_year, years):
 
 def annual_range(date_str, hourly_periods, days):
     start = pd.to_datetime(date_str) - pd.Timedelta(days)
-    drange = pd.date_range(start, periods=hourly_periods, freq='H').round('min')  # rounding to exact minute
+    drange = pd.date_range(start, periods=hourly_periods, freq='h').round('min')  # rounding to exact minute
     drange = drange.strftime("%d.%m.%Y %H:%M:%S")  # changing representaion format
     return drange
 
